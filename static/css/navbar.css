@@ -1,0 +1,109 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 98%;
+    background: rgba(0, 119, 182, 0.8); /* Transparent blue */
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+/* Move the logo and burger button to the left side */
+/* Logo Styling */
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Adds space between the icon and text */
+}
+
+.navbar .logo i {
+    font-size: 1.8rem; /* Adjusts the size of the icon */
+}
+
+.navbar .menu-toggle {
+    display: none; /* Hide the checkbox */
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    order: -1; /* Moves the burger to the left side */
+    z-index: 11; /* Ensure it's clickable above other elements */
+}
+
+.burger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+/* Navbar links */
+.nav-links {
+    display: flex;
+    gap: -1rem;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 0.5rem; /* Move the list item slightly to the left */
+}
+
+.nav-links li a {
+    color: white;
+    font-size: 1.1rem;
+    padding: 2rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ffd700;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        position: absolute;
+        top: 76%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 119, 182, 0.95);
+        padding: 1rem 0;
+    }
+
+    .menu-toggle:checked + .burger + .nav-links {
+        display: flex;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    /* Ensure the menu toggle checkbox is functional */
+    .menu-toggle:checked + .burger + .nav-links {
+        display: flex;
+    }
+}

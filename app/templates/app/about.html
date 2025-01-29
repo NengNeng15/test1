@@ -1,0 +1,62 @@
+{% load static %}
+{% include 'app/navbar.html' %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/aboutt.css' %}">
+<body>
+    <header class="about-header">
+        <h1 class="about-title">About Our 🫧 SwimmingPro School</h1>
+    </header>
+    <main class="about-main">
+        <p class="about-intro">
+            Welcome to our swimming school! We are dedicated to <span class="highlight">helping swimmers of all levels</span> build confidence, improve skills, and embrace the water.
+        </p>
+        <section class="image-section">
+            <img src="{% static 'images/123.jpg' %}" alt="Swimming Pool" class="about-image">
+            <p class="image-caption">Our state-of-the-art swimming pool, perfect for training and learning.</p>
+        </section>
+        <br><br><br>
+        <section class="mission-section">
+            <h2 class="mission-title">Our Mission</h2>
+            <div class="mission-box">
+                <img src="{% static 'images/mission.jpg' %}" alt="Mission Image" class="mission-image">
+                <p class="mission-details">
+                    Our mission is to inspire a lifelong love for swimming by providing expert training, a safe and welcoming environment, and a supportive community. We are committed to fostering confidence, discipline, and skill development in swimmers of all levels, from beginners to competitive athletes. Through professional coaching, state-of-the-art facilities, and a culture of encouragement, we aim to empower individuals to achieve their personal best while promoting health, fitness, and water safety. Our inclusive and uplifting atmosphere ensures that every swimmer feels valued, motivated, and part of a thriving aquatic community.
+                </p>
+            </div>
+        </section>
+        <br><br><br><br><br><br>
+
+        <section class="values-section">
+            <h2 class="values-title">Our Core Values</h2><br>
+            <div class="values-content">
+                <div class="value">
+                    <img src="{% static 'images/SWIM-SAFETY.jpg' %}" alt="Safety Icon" class="value-icon">
+                    <h3>Safety First</h3>
+                    <p>We prioritize a safe and secure environment for all swimmers.</p>
+                </div>
+                <div class="value">
+                    <img src="{% static 'images/dev.jpg' %}" alt="Skill Icon" class="value-icon">
+                    <h3>Skill Development</h3>
+                    <p>Our expert coaches help swimmers master essential techniques.</p>
+                </div>
+                <div class="value">
+                    <img src="{% static 'images/community.jpg' %}" alt="Community Icon" class="value-icon">
+                    <h3>Community</h3>
+                    <p>We foster a welcoming and encouraging atmosphere.</p>
+                </div>
+            </div>
+        </section>
+        <br><br><br>
+        <section class="contact-section">
+            <h2 class="contact-title">Contact Us</h2>
+            <p class="contact-details">
+                Ready to dive in? Visit our <a href="/contact/" class="contact-link">contact page</a> or call us at <strong>(555) 123-4567</strong> to get started.
+            </p>
+        </section>
+
+        <section class="cta-section">
+            <a href="/classes/" class="cta-button">Join Our Classes</a><br><br><br><br><br><br>
+        </section>
+    </main>
+</body>
+{% endblock content %}

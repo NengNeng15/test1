@@ -1,0 +1,99 @@
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center; /* Vertically align content */
+    justify-content: space-between; /* Distribute space between content and image */
+    padding: 60px;
+    background-color: #f0f8ff;
+    background-image: linear-gradient(to right, #00c6ff, #0072ff);
+    color: white;
+    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+    min-height: 100vh; /* Make the section at least as tall as the viewport */
+    box-sizing: border-box; /* Ensure padding doesn't affect overall height */
+}
+
+.hero-content {
+    max-width: 50%;
+    flex: 1; /* Ensure the content takes available space */
+    text-align: left; /* Align text to the left */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary {
+    padding: 12px 25px;
+    background-color: #0072ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #005bb5;
+}
+
+.btn-secondary {
+    padding: 12px 25px;
+    background-color: white;
+    color: #0072ff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #f0f8ff;
+    color: #005bb5;
+}
+
+/* Hero Image */
+.hero-image {
+    max-width: 50%;
+    flex: 1; /* Ensure the image takes available space */
+    text-align: center; /* Center image in the container */
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.05); /* Subtle zoom effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column; /* Stack content vertically */
+        text-align: center; /* Center align text */
+    }
+
+    .hero-content {
+        max-width: 100%; /* Allow content to take full width */
+        margin-bottom: 30px; /* Add spacing below content */
+    }
+
+    .hero-image {
+        max-width: 100%; /* Image takes full width */
+    }
+}

@@ -1,0 +1,66 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Align horizontally */
+    align-items: center;    /* Align vertically */
+  }
+  
+  /* Styling for the confirmation deletion container */
+  .confirm-deletion-container {
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text inside */
+    max-width: 400px;
+  }
+  
+  /* Header styling */
+  .confirm-deletion-container h2 {
+    color: #dc3545;
+    margin-bottom: 10px;
+  }
+  
+  /* Paragraph styling */
+  .confirm-deletion-container p {
+    color: #6c757d;
+    margin-bottom: 20px;
+  }
+  
+  /* Form styling */
+  .confirm-deletion-container form {
+    margin-bottom: 15px; /* Add spacing below form */
+  }
+  
+  /* Button styling */
+  .confirm-deletion-container button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .confirm-deletion-container button:hover {
+    background-color: #c82333;
+  }
+  
+  /* Link styling */
+  .confirm-deletion-container a {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .confirm-deletion-container a:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,0 +1,46 @@
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/update.css' %}">
+<div class="form-container">
+    <div class="header">
+        <h1>Update Lesson</h1>
+            <a href="{% url 'database' %}" class="back-button" onclick="return confirmBack();">Back</a>
+                <i class="ri-close-line"></i>
+            </a>
+    </div>
+    <p class="intro-text">Please Update the details below for the User.</p>
+    <form action="{% url 'lesson_update' object.pk %}" method="post">
+        {% csrf_token %}
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" value="{{ lesson.title }}">
+        {% for error in form.title.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" value="{{ lesson.description }}">
+        {% for error in form.description.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="duration_minutes">Duration Minutes</label>
+        <input type="number" id="duration_minutes" name="duration_minutes" value="{{ lesson.duration_minutes }}">
+        {% for error in form.duration_minutes.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="price">Price</label>
+        <input type="number" id="price" name="price" value="{{ lesson.price }}">
+        {% for error in form.price.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="location">Location</label>
+        {{ form.location }}
+        {% for error in form.location.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+        <input type="submit" value="save">
+    </form>
+</div>
+{% endblock content %}

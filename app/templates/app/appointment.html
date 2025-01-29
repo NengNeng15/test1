@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="{% static 'css/add.css' %}">
+    <title>Welcome</title>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Appointment Form</h1>
+        <a href="{% url 'classes' %}" class="back-button" onclick="return confirmBack();">Back</a>
+    </div>
+    <p class="intro-text">Please fill in the details below to add new venue</p>
+    <form id="appointmentForm" action="{% url 'addappointment' %}" method="post">
+        {% csrf_token %}
+        <label for="lesson">Lesson: </label>
+        <input type="text" id="lesson" name="lesson">
+        {% for error in form.lesson.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="instructor">Instructor: </label>
+        <input type="text" id="instructor" name="instructor">
+        {% for error in form.instructor.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="student">Student: </label>
+        <input type="text" id="student" name="student">
+        {% for error in form.student.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="date_time">Date Time: </label>
+        <input type="datetime-local" id="date_time" name="date_time">
+        {% for error in form.date_time.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+        <input type="submit" value="Send">
+</body>
+</html>

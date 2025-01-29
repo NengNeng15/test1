@@ -1,0 +1,108 @@
+{% load static %}
+{% include 'app/navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes Section</title>
+    <link rel = "stylesheet" href="{% static 'css/classes1.css' %}">
+</head>
+<body>
+    <a href="{% url 'classes' %}" class="back-button">← Back</a>
+    <div class="container">
+        <h1>Babies Class</h1>
+        <div class="grid">
+            <!-- Card 1 -->
+            <a class="card-link">
+                <div class="card">
+                    <img src="{% static 'images/baby1.jpg' %}" alt="Class Image">
+                    <div class="card-content">
+                        <h2>Level 1: STARFISH - WATER FAMILIAR</h2>
+                        <p>A pre-swimming class with parent in the water. The child experiences his/her first pool environment interaction and swim activities. The class STARFISH is for children ages 6 months and older.</p>
+                        <p class="details"><strong>Main Goal:</strong> To be relaxed and comfortable in the water. </p>
+                        <p class="details"><strong>Skill to be achieved:</strong><br>
+                        - Comfortable in the water<br>
+                        - Relax on assisted backfloat<br>
+                        - Comfortable with water poured over face<br>
+                        - Kicks on tummy with assistance</p><br><br><br><br><br><br>
+                    </div>
+                </div>
+            </a>
+
+
+            <!-- Card 2 -->
+            <a class="card-link">
+                <div class="card">
+                    <img src="{% static 'images/baby2.jpg' %}" alt="Class Image">
+                    <div class="card-content">
+                        <h2>Level 2: PUFFERS - WATER FAMILIAR</h2>
+                        <p>This class is for children who are eager to participate, more confident entering the pool and enjoys playing in the water with parent.This is a modified Starfish program but with more skills and movements implemented.</p>
+                        <p class="details"><strong>Main Goal:</strong> Introduction to basic water safety skills (Floating, Kicking, Paddling, Breath holding) </p>
+                        <p class="details"><strong>Skill to be achieved:</strong><br>- Kicks with minimal assistance<br>
+                        - Back float with minimal assistance<br>
+                        - Paddles with assistance<br>
+                        - Gliding underwater (3-5sec)<br>
+                        - Assisted twist and turn to parent/wall vice versa (vertical position)<br>
+                        - Assisted monkey walk (use of gutter for safety)</p><br>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Card 3 -->
+            <a class="card-link">
+                <div class="card">
+                    <img src="{% static 'images/baby3.jpg' %}" alt="Class Image">
+                    <div class="card-content">
+                        <h2>Level 3: GUPPIES - WATER SAFETY</h2>
+                        <p>This class is for the children who are ready to learn and perform basic water safety. Children in this class will learn how to perform water skills with minimal assistance from parent or teachers.</p>
+                        <p class="details"><strong>Main Goal:</strong> Advance water safety skills. </p>
+                        <p class="details"><strong>Skill to be achieved:</strong><br>- Jumps in the pool with minimal assistance<br>
+                        - Back float minimal to with least assistance<br>
+                        - Kicks with equipment (kickboard, noodles..etc) with minimal assistance<br>
+                        - Paddles with equipment (noodles, battery or floaters..etc) with minimal assistance<br>
+                        - Gliding underwater with distance (5-7sec)<br>
+                        - Unassisted twist and turn to parent/wall vice versa (vertical position)<br>
+                        - Unassisted monkey walk (use of gutter for safety)</p>
+                    </div>
+                </div>
+            </a>
+            <!-- Card 4 -->
+            <a class="card-link">
+                <div class="card">
+                    <img src="{% static 'images/baby4.jpg' %}" alt="Class Image">
+                    <div class="card-content">
+                        <h2>Level 4: PENGUINS - WATER CONFIDENT</h2>
+                        <p>This class is for children who are eager to participate with or without parents in the water.This class promotes independence in performing water skills. Activities are challenging but achievable. Water skills should be performed with distance and with very minimal assistance from parent or teacher.</p>
+                        <p class="details"><strong>Main Goal:</strong> Introduction to survival swim with minimal assistance.</p>
+                        <p class="details"><strong>Skill to be achieved:</strong>
+                    <br>- Jumps in pool & Pulls up unassisted<br>
+                        - Independent back float<br>
+                        - Independent kicking with and without equipment<br>
+                        - Independent paddling with and without equipment<br>
+                        - Glides back and forth with distance (7-10sec)<br>
+                        - Assisted survival swim</p>
+                    </div>
+                </div>
+            </a>
+            <!-- Card 5 -->
+            <a class="card-link">
+                <div class="card">
+                    <img src="{% static 'images/baby5.jpg' %}" alt="Class Image">
+                    <div class="card-content">
+                        <h2>Level 5: SEALS - WATER INDEPENDENT</h2>
+                        <p>This class is for children who are independent from parents and have more confidence in the water.Water skills should be performed with distance and without assistance from parent or teacher. This class prepares children for Snapper Level.</p>
+                        <p class="details"><strong>Main Goal:</strong> Independent survival swim.</p>
+                        <p class="details"><strong>Skill to be achieved:</strong>
+                    <br>- Dives in pool & Pulls up unassisted<br>
+                        - Performs two kinds of floating (Angel and Starfish)<br>
+                        - Kicks and paddles with distance (with or without equipment use)<br>
+                        - Retrieves toys underwater<br>
+                        - Survival swim with distance</p><br><br>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,200 @@
+/* General Body Styling */
+body {
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* Water-like gradient */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+.about-header {
+    color: #fff;
+    padding: 80px 20px 20px;  /* Adjusted padding: less padding at the top */
+    text-align: center;
+    background-size: cover;
+    margin-top: 20px;  /* Adds space above the header */
+}
+
+.about-intro {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #fff;
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.about-header h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+.mission-title {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Image Section */
+.image-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.about-image {
+    max-width: 80%;  /* Adjust this percentage to reduce the size */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.image-caption {
+    font-size: 0.9rem;
+    color: #fff;
+    margin-top: 5px;
+}
+
+/* Values Section */
+.values-section {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.values-title {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.values-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.value {
+    width: 250px;
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.value:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.value-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.value h3 {
+    font-size: 1.2rem;
+    color: #0073e6;
+    margin: 10px 0;
+}
+
+.value p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.contact-details {
+    text-align: center;
+    font-size: 1rem;
+    color: #fff;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.mission-box {
+    background-color: #f0f8ff;  /* Light blue background */
+    border: 1px solid #0073e6;  /* Blue border */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;  /* Optional: Adjust to control the width of the box */
+    margin: 0 auto;  /* Centers the box */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Optional: Add shadow */
+    text-align: center; /* Center content inside the box */
+}
+
+.mission-image {
+    width: 100%;  /* Adjust width as needed */
+    max-width: 800px;  /* Limit the width of the image */
+    height: auto;
+    margin-bottom: 15px;  /* Space between the image and text */
+    border-radius: 10px;  /* Optional: Rounded corners */
+}
+
+.mission-details {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+
+/* Call-to-Action Button */
+.cta-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cta-button {
+    background: #0073e6;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    background: #005bb5;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-title {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-header h1 {
+        font-size: 2rem;
+    }
+
+    .about-main {
+        padding: 20px;
+    }
+
+    .values-title {
+        font-size: 1.5rem;
+    }
+
+    .value h3 {
+        font-size: 1rem;
+    }
+
+    .value p {
+        font-size: 0.8rem;
+    }
+}
+

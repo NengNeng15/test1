@@ -1,0 +1,238 @@
+    {% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin Dashboard</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel = "stylesheet" href="{% static 'css/database.css' %}">
+    </head>
+    <body onload="showDashboard()">
+        <button id="burgerButton" onclick="toggleSidebar()">&#9776;</button>
+        <div class="container">
+            <aside class="sidebar" id="sidebar">
+                <h2>👨🏻‍💻Admin Dashboard</h2>
+                <nav>
+                    <ul>
+                        <li><a href="#" onclick="showSection('dashboard')">🖥️ Dashboard</a></li>
+                        <li><a href="#" onclick="showSection('user')">👨🏻‍💻 User</a></li>
+                        <li><a href="#" onclick="showSection('venue')">🏞️ Venue</a></li>
+                        <li><a href="#" onclick="showSection('lesson')">🏊‍♀️ Lesson</a></li>
+                        <li><a href="#" onclick="showSection('appointment')">🗓️ Appointment</a></li>
+                        <li><a href="#" onclick="showSection('payment')">💵 Payment</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <main class="main-content">
+                <div class="auth-box">
+                    {% if user.is_authenticated %}
+                        <p>Hi {{ user.username }}</p>
+                        <form method="post" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <button type="submit">Log out</button>
+                        </form>
+                    {% else %}
+                        <p>You are not logged in</p>
+                    {% endif %}
+                </div>
+                <header>
+                    <h1>🙋‍♂️Welcome to Admin Dashboard</h1>
+                </header>
+                <section id="dashboard" class="content-section">
+                    <h2>Dashboard Overview</h2>
+                    <div class="dashboard-overview">
+                        <div class="overview-item">
+                            <h3>Total Users</h3>
+                            <p>{{ user_count }}</p>
+                        </div>
+                        <div class="overview-item">
+                            <h3>Total Venues</h3>
+                            <p>{{ venue_count }}</p>
+                        </div>
+                        <div class="overview-item">
+                            <h3>Total Lessons</h3>
+                            <p>{{ lesson_count }}</p>
+                        </div>
+                        <div class="overview-item">
+                            <h3>Total Appointments</h3>
+                            <p>{{ appointment_count }}</p>
+                        </div>
+                        <div class="overview-item">
+                            <h3>Total Payments</h3>
+                            <p>{{ payment_count }}</p>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section id="user" class="content-section" style="display: none;">
+                    <h2>User Overview</h2>
+                    <button class="add-button" onclick="window.location.href='{% url 'adduser' %}'"><i class="fa-solid fa-user-plus"></i></button>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Phone Number</th>
+                                <th>Role</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userTableBody">
+                            {% for user in users %}
+                            <tr>
+                                <td>{{ user.first_name }}</td>
+                                <td>{{ user.last_name }}</td>
+                                <td>{{ user.email }}</td>
+                                <td>{{ user.phone_number }}</td>
+                                <td>{{ user.role }}</td>
+                                <td>
+                                    <button class="edit-button" onclick="window.location.href='{% url 'user_update' user.pk %}'"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="delete-button" onclick="window.location.href='{% url 'delete_user' user.pk %}'"><i class="fa-solid fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </section>
+                <section id="venue" class="content-section" style="display: none;">
+                    <h2>Venue Overview</h2>
+                    <button class="add-button" onclick="window.location.href='{% url 'addvenue' %}'"> <i class="fa-solid fa-user-plus"></i></button>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>City</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="venueTableBody">
+                            {% for venue in venues %}
+                            <tr>
+                                <td>{{ venue.name }}</td>
+                                <td>{{ venue.address }}</td>
+                                <td>{{ venue.city }}</td>
+                                <td>
+                                    <button class="edit-button" onclick="window.location.href='{% url 'venue_update' venue.pk %}'"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="delete-button" onclick="window.location.href='{% url 'delete_venue' venue.pk %}'"><i class="fa-solid fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </section>
+                <section id="lesson" class="content-section" style="display: none;">
+                    <h2>Lesson Overview</h2>
+                    <button class="add-button" onclick="window.location.href='{% url 'addlesson' %}'"><i class="fa-solid fa-user-plus"></i></button>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Duration Minutes</th>
+                                <th>Price</th>
+                                <th>Location</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lessonTableBody">
+                            {% for lesson in lessons %}
+                            <tr>
+                                <td>{{ lesson.title }}</td>
+                                <td>{{ lesson.description }}</td>
+                                <td>{{ lesson.duration_minutes }}</td>
+                                <td>{{ lesson.price }}</td>
+                                <td>{{ lesson.location }}</td>
+                                <td>
+                                    <button class="edit-button" onclick="window.location.href='{% url 'lesson_update' lesson.pk %}'"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="delete-button" onclick="window.location.href='{% url 'delete_lesson' lesson.pk %}'"><i class="fa-solid fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </section>
+                <section id="appointment" class="content-section" style="display: none;">
+                    <h2>Appointment Overview</h2>
+                    <button class="add-button" onclick="window.location.href='{% url 'addappointment' %}'"><i class="fa-solid fa-user-plus"></i></button>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Lesson</th>
+                                <th>Instructor</th>
+                                <th>Student</th>
+                                <th>Date Time</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="appointmentTableBody">
+                            {% for appointment in appointments %}
+                            <tr>
+                                <td>{{ appointment.lesson }}</td>
+                                <td>{{ appointment.instructor }}</td>
+                                <td>{{ appointment.student }}</td>
+                                <td>{{ appointment.date_time }}</td>
+                                <td>{{ appointment.status }}</td>
+                                <td>
+                                    <button class="edit-button" onclick="window.location.href='{% url 'appointment_update' appointment.pk %}'"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="delete-button" onclick="window.location.href='{% url 'delete_appointment' appointment.pk %}'"><i class="fa-solid fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </section>
+                <section id="payment" class="content-section" style="display: none;">
+                    <h2>Payment Overview</h2>
+                    <button class="add-button" onclick="window.location.href='{% url 'addpayment' %}'"><i class="fa-solid fa-user-plus"></i></button>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Appointment</th>
+                                <th>Amount</th>
+                                <th>Payment Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="paymentTableBody">
+                            {% for payment in payments %}
+                            <tr>
+                                <td>{{ payment.appointment }}</td>
+                                <td>{{ payment.amount }}</td>
+                                <td>{{ payment.payment_date }}</td>
+                                <td>{{ payment.status }}</td>
+                                <td>
+                                    <button class="edit-button" onclick="window.location.href='{% url 'payment_update' payment.pk %}'"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="delete-button" onclick="window.location.href='{% url 'delete_payment' payment.pk %}'"><i class="fa-solid fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </section>
+            </main>
+        </div>
+        <script>
+            function toggleSidebar() {
+                const sidebar = document.getElementById('sidebar');
+                sidebar.classList.toggle('active');
+            }
+
+            function showSection(sectionId) {
+                const sections = document.querySelectorAll('.content-section');
+                sections.forEach(section => section.style.display = 'none');
+                document.getElementById(sectionId).style.display = 'block';
+            }
+
+            function showDashboard() {
+                showSection('dashboard');
+            }
+        </script>
+    </body>
+    </html>

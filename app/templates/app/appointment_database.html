@@ -1,0 +1,31 @@
+<section id="appointment" class="content-section" style="display: none;">
+    <h2>Appointment Overview</h2>
+    <button class="add-button" onclick="window.location.href='{% url 'addappointment' %}'"><i class="fa-solid fa-user-plus"></i></button>
+    <table>
+        <thead>
+            <tr>
+                <th>Lesson</th>
+                <th>Instructor</th>
+                <th>Student</th>
+                <th>Date Time</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="appointmentTableBody">
+            {% for appointment in appointments %}
+            <tr>
+                <td>{{ appointment.lesson }}</td>
+                <td>{{ appointment.instructor }}</td>
+                <td>{{ appointment.student }}</td>
+                <td>{{ appointment.date_time }}</td>
+                <td>{{ appointment.status }}</td>
+                <td>
+                    <button class="edit-button" onclick="window.location.href='{% url 'appointment_update' appointment.pk %}'"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button class="delete-button" onclick="window.location.href='{% url 'delete_appointment' appointment.pk %}'"><i class="fa-solid fa-trash-can"></i></button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>

@@ -1,0 +1,102 @@
+{% load static %}
+{% include 'app/navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes Section</title>
+    <link rel = "stylesheet" href="{% static 'css/classes1.css' %}">
+</head>
+<body>
+    <a href="{% url 'classes' %}" class="back-button">← Back</a>
+    <div class="container">
+        <h1>Adult Class</h1>
+        <div class="grid">
+            <!-- Card 1 -->
+            <a class="card-link">
+                <div class="card">
+                    <img src="{% static 'images/kids1.jpeg' %}" alt="Class Image">
+                    <div class="card-content">
+                        <h2>Level 1: SNAPPER 1</h2>
+                        <p>For children who are new to swimming, hesitant about water, or have little to no swimming experience.</p>
+                        <p class="details"><strong>Main Goal:</strong> To be relaxed and comfortable in the water. </p>
+                        <p class="details"><strong>Skill to be achieved:</strong><br>
+                        - Comfortable in the water<br>
+                        - Relax on assisted backfloat<br>
+                        - Comfortable with water poured over face<br>
+                        - Kicks on tummy with assistance</p><br>
+                    </div>
+                </div>
+            </a>
+
+
+            <!-- Card 2 -->
+            <a class="card-link">
+                <div class="card">
+                    <img src="{% static 'images/kids2.jpeg' %}" alt="Class Image">
+                    <div class="card-content">
+                        <h2>Level 2: SNAPPER 2</h2>
+                        <p>For children ready to swim without a parent’s assistance, developing basic survival swim techniques.</p>
+                        <p class="details"><strong>Main Goal:</strong> To swim independently for short distances while building basic water safety skills.</p>
+                        <p class="details"><strong>Skill to be achieved:</strong>
+                    <br>- 10m Survival Swim<br>
+                        - 10m Dog Paddle<br>
+                        - Floating independently for a few seconds<br>
+                        - Basic water entry and exit</p>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Card 3 -->
+            <a class="card-link">
+                <div class="card">
+                    <img src="{% static 'images/kids3.jpeg' %}" alt="Class Image">
+                    <div class="card-content">
+                        <h2>Level 3: JAMMER 1</h2>
+                        <p>For children developing longer swim distances with a focus on freestyle and survival swimming.</p>
+                        <p class="details"><strong>Main Goal:</strong>  To increase swimming distance and improve stroke technique, with focus on freestyle and survival swim skills. </p>
+                        <p class="details"><strong>Skill to be achieved:</strong>
+                    <br>- 15m Survival Swim<br>
+                        - 15m Basic Freestyle<br>
+                        - Improving breath control while swimming<br>
+                        - Kicking with proper technique</p>
+                    </div>
+                </div>
+            </a>
+            <!-- Card 4 -->
+            <a class="card-link">
+                <div class="card">
+                    <img src="{% static 'images/kids4.jpeg' %}" alt="Class Image">
+                    <div class="card-content">
+                        <h2>Level 4: JAMMER 2</h2>
+                        <p>For children learning advanced strokes, focusing on backstroke and butterfly.</p>
+                        <p class="details"><strong>Main Goal:</strong> To refine technique in advanced strokes and develop water coordination and balance.</p>
+                        <p class="details"><strong>Skill to be achieved:</strong>
+                    <br>- 15m Backstroke<br>
+                        - 15m Butterfly<br>
+                        - Introduction to proper stroke techniques<br>
+                        - Body coordination and balance in the water</p><br>
+                    </div>
+                </div>
+            </a>
+            <!-- Card 5 -->
+            <a class="card-link">
+                <div class="card">
+                    <img src="{% static 'images/kids5.jpeg' %}" alt="Class Image">
+                    <div class="card-content">
+                        <h2>Level 5: JAMMER 3</h2>
+                        <p>For children refining their technique in advanced strokes, preparing for pre-competitive swimming.</p>
+                        <p class="details"><strong>Main Goal:</strong> To perfect swimming techniques for efficiency and endurance, with an introduction to competitive swim skills.</p>
+                        <p class="details"><strong>Skill to be achieved:</strong>
+                    <br>- 15m Breaststroke<br>
+                        - Advanced Freestyle mechanics<br>
+                        - Stroke efficiency and endurance<br>
+                        - Learning basic turns and transitions</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

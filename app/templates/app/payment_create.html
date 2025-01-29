@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="{% static 'css/add.css' %}">
+    <title>Welcome</title>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Payment Form</h1>
+        <a href="{% url 'database' %}" class="back-button" onclick="return confirmBack();">Back</a>
+    </div>
+    <p class="intro-text">Please fill in the details below to add new venue</p>
+    <form id="paymentForm" action="{% url 'addpayment' %}" method="post">
+        {% csrf_token %}
+        <label for="appointment">Appointment: </label>
+        {{ form.appointment }}
+        {% for error in form.appointment.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="amount">Amount: </label>
+        <input type="number" id="amount" name="amount">
+        {% for error in form.amount.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="payment_date">Payment Date: </label>
+        <input type="date" id="payment_date" name="payment_date">
+        {% for error in form.payment_date.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="status">Status: </label>
+        {{ form.status }}
+        {% for error in form.status.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+        <input type="submit" value="Send">
+</body>
+</html>

@@ -1,0 +1,52 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="{% static 'css/add.css' %}">
+    <title>Welcome</title>
+</head>
+<body>
+    <div class="form-container">
+        <h1>User Form</h1>
+        <a href="{% url 'database' %}" class="back-button" onclick="return confirmBack();">Back</a>
+    </div>
+    <p class="intro-text">Please fill in the details below to add new user</p>
+    <form id="userForm" action="{% url 'adduser' %}" method="post">
+        {% csrf_token %}
+        <label for="first_name">First Name: </label>
+        <input type="text" id="first_name" name="first_name">
+        {% for error in form.first_name.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="last_name">Last Name: </label>
+        <input type="text" id="last_name" name="last_name">
+        {% for error in form.last_name.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="email">Email: </label>
+        <input type="text" id="email" name="email">
+        {% for error in form.email.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="phone_number">Phone Number: </label>
+        <input type="text" id="phone_number" name="phone_number">
+        {% for error in form.phone_number.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="role">Role: </label>
+        {{ form.role }}
+        {% for error in form.role.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+        <input type="submit" value="Send">
+    </form>
+    {% endblock content %}
+</body>
+</html>

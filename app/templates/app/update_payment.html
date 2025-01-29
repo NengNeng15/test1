@@ -1,0 +1,40 @@
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/update.css' %}">
+<div class="form-container">
+    <div class="header">
+        <h1>Update Lesson</h1>
+            <a href="{% url 'database' %}" class="back-button" onclick="return confirmBack();">Back</a>
+                <i class="ri-close-line"></i>
+            </a>
+    </div>
+    <p class="intro-text">Please Update the details below for the User.</p>
+    <form action="{% url 'payment_update' object.pk %}" method="post">
+        {% csrf_token %}
+        <label for="appointment">Appointment</label>
+        {{ form.appointment }}
+        {% for error in form.appointment.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="amount">Amount</label>
+        {{ form.amount }}
+        {% for error in form.amount.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="payment_date">Payment Date</label>
+        <input type="date" id="payment_date" name="payment_date">
+        {% for error in form.payment_date.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="status">Status</label>
+        {{ form.status }}
+        {% for error in form.status.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+        <input type="submit" value="save">
+    </form>
+</div>
+{% endblock content %}

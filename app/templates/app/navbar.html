@@ -1,0 +1,36 @@
+{% load static %}
+<head>
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+<header>
+    <div class="navbar">
+        <div class="logo">
+            🫧 SwimPro School
+        </div>
+        
+        <!-- Hidden checkbox for menu toggle -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        
+        <!-- Burger icon -->
+        <label for="menu-toggle" class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </label>
+    
+        <!-- Navigation links -->
+        <ul class="nav-links">
+            <li><a href="/">🏠︎ Home</a></li>
+            <li><a href="/about/">👁 About</a></li>
+            <li><a href="/classes/">𖦹 Classes</a></li>
+            <li><a href="/contact/">☎ Contact</a></li>
+            <li><a href="/appointment/">📝 Appointment</a></li>
+            <li><a href="{% url 'login' %}">👨🏻‍💻 Admin Login</a></li>
+        </ul>
+    </div>
+    
+</header>
+

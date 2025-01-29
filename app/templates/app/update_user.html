@@ -1,0 +1,47 @@
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/update.css' %}">
+
+<div class="form-container">
+    <div class="header">
+        <h1>Update User</h1>
+            <a href="{% url 'database' %}" class="back-button" onclick="return confirmBack();">Back</a>
+                <i class="ri-close-line"></i>
+            </a>
+    </div>
+    <p class="intro-text">Please Update the details below for the User.</p>
+    <form action="{% url 'user_update' object.pk %}" method="post">
+        {% csrf_token %}
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name" value="{{ user.first_name }}">
+        {% for error in form.first_name.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name" value="{{ user.last_name }}">
+        {% for error in form.last_name.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" value="{{ user.email }}">
+        {% for error in form.email.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="phone_number">Phone Number</label>
+        <input type="text" id="phone_number" name="phone_number" value="{{ user.phone_number }}">
+        {% for error in form.phone_number.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="role">Role</label>
+        {{ form.role }}
+        {% for error in form.role.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+        <input type="submit" value="save">
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% load static %}
+{% include 'app/navbar.html' %}
+<link rel="stylesheet" href="{% static 'css/contactt.css' %}">
+<div class="contact-page">
+    <header class="contact-header">
+        <h1>Contact Us</h1>
+        <p>Get in touch with us to dive into your swimming journey!</p>
+    </header>
+
+    <main class="contact-main">
+        <section class="contact-details">
+            <h2>Contact Information</h2>
+            <p><strong>Phone:</strong> <a href="tel:+1234567890" class="contact-link">+1 234 567 890</a></p>
+            <p><strong>Email:</strong> <a href="mailto:info@swimschool.com" class="contact-link">info@swimschool.com</a></p>
+            <p><strong>Address:</strong> 123 Swim Lane, Aqua City, Ocean State</p>
+        </section>
+
+        <section class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </section>
+    </main>

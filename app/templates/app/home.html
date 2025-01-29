@@ -1,0 +1,28 @@
+{% load static %}
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/homee.css' %}">
+        <title>🫧 SwimPro School</title>
+ </head>
+ <body>
+    {% include 'app/navbar.html' %}
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Make a Splash with SwimPro School!</h1>
+            <p>Learn to swim with confidence, master techniques, and enjoy the water in a safe, friendly environment. Join us today!</p>
+            <div class="hero-buttons">
+                <a href="/classes/" class="btn-primary">View Classes</a>
+                <a href="/register/" class="btn-secondary">Register Now</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="{% static 'images/123.jpg' %}" alt="Kids learning to swim in a pool" class="hover-animated-image">
+        </div>
+    </section>
+ </body>
+ </html>
+
+ 

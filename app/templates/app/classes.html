@@ -1,0 +1,55 @@
+{% load static %}
+{% include 'app/navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes Section</title>
+    <link rel = "stylesheet" href="{% static 'css/classes1.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Our Classes</h1>
+        <div class="grid">
+            <!-- Card 1 -->
+            <a href="{% url 'class1' %}" class="card-link">
+                <div class="card">
+                    <img src="{% static 'images/BABIES_01.jpg' %}" alt="Class Image">
+                    <div class="card-content">
+                        <h2>Babies Class</h2>
+                        <p>Experience relaxation and mindfulness in our Swimming class for all levels.</p>
+                        <p class="details"><strong>Instructor:</strong> Jane Doe</p>
+                        <p class="details"><strong>Schedule:</strong> Monday & Wednesday, 6-7 PM</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="{% url 'class2' %}" class="card-link">
+                <div class="card">
+                    <img src="{% static 'images/KIDS_02.jpeg' %}" alt="Class Image">
+                    <div class="card-content">
+                        <h2>Kids Class</h2>
+                        <p>Experience relaxation and mindfulness in our Swimming class for all levels.</p>
+                        <p class="details"><strong>Instructor:</strong> Jane Doe</p>
+                        <p class="details"><strong>Schedule:</strong> Monday & Wednesday, 6-7 PM</p>
+                    </div>
+                </div>
+            </a>
+            <!-- Card 3 -->
+            <a href="{% url 'class3' %}" class="card-link">
+                <div class="card">
+                    <img src="{% static 'images/ADULTS-01.jpg' %}" alt="Class Image">
+                    <div class="card-content">
+                        <h2>Adult Class</h2>
+                        <p>Experience relaxation and mindfulness in our Swimming class for all levels.</p>
+                        <p class="details"><strong>Instructor:</strong> Jane Doe</p>
+                        <p class="details"><strong>Schedule:</strong> Monday & Wednesday, 6-7 PM</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

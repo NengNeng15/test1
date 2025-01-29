@@ -1,0 +1,46 @@
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/update.css' %}">
+<div class="form-container">
+    <div class="header">
+        <h1>Update Lesson</h1>
+            <a href="{% url 'database' %}" class="back-button" onclick="return confirmBack();">Back</a>
+                <i class="ri-close-line"></i>
+            </a>
+    </div>
+    <p class="intro-text">Please Update the details below for the User.</p>
+    <form action="{% url 'appointment_update' object.pk %}" method="post">
+        {% csrf_token %}
+        <label for="lesson">Lesson</label>
+        {{ form.lesson }}
+        {% for error in form.lesson.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="instructor">Instructor</label>
+        {{ form.instructor }}
+        {% for error in form.instructor.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="student">Student</label>
+        {{ form.student }}
+        {% for error in form.student.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="date_time">Date Time</label>
+        <input type="datetime-local" id="date_time" name="date_time">
+        {% for error in form.date_time.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+
+        <label for="status">status</label>
+        {{ form.status }}
+        {% for error in form.status.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+        <input type="submit" value="save">
+    </form>
+</div>
+{% endblock content %}
